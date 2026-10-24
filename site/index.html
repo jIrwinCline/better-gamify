@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Game UI — Open-source gamification components for SaaS</title>
+    <meta
+      name="description"
+      content="Explore live SaaS gamification examples and own the code. Action Credits pairs an adaptable onboarding rewards component with an AI implementation skill. Free and MIT licensed."
+    />
+    <meta name="theme-color" content="#111310" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://example.invalid/game-ui/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Game UI — Small actions. Meaningful growth."
+    />
+    <meta
+      property="og:description"
+      content="Open-source gamification components and implementation skills for SaaS. Explore the first pattern: Action Credits."
+    />
+    <meta property="og:url" content="https://example.invalid/game-ui/" />
+    <meta
+      property="og:image"
+      content="https://example.invalid/game-ui/social.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Game UI home"
+        ><img src="./favicon.svg" width="28" height="28" alt="" /><span
+          >Game UI</span
+        ><span class="version">v0.1</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a class="nav-active" href="#patterns">Patterns</a
+        ><a href="#installation">Get started</a
+        ><a href="#approach">The approach</a>
+      </nav>
+      <div class="nav-actions">
+        <button
+          class="icon-button"
+          id="theme-toggle"
+          aria-label="Switch to light theme"
+          title="Switch theme"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+            />
+          </svg></button
+        ><a
+          class="github-nav"
+          data-repo
+          href="https://github.com/jIrwinCline/game-ui"
+          ><svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M9 19c-4.3 1.3-4.3-2.3-6-2.8M15 22v-3.4c0-1 .1-1.5-.5-2.1 3.3-.4 6.8-1.6 6.8-7.3a5.7 5.7 0 0 0-1.5-4 5.3 5.3 0 0 0-.1-3.9s-1.3-.4-4.2 1.5a14 14 0 0 0-7.6 0C5 1 3.7 1.3 3.7 1.3a5.3 5.3 0 0 0-.1 3.9 5.7 5.7 0 0 0-1.5 4c0 5.7 3.5 6.9 6.8 7.3-.6.6-.6 1.2-.5 2.1V22"
+            /></svg
+          ><span>GitHub</span><span aria-hidden="true">↗</span></a
+        >
+      </div>
+    </header>
+    <div class="page-shell" id="top">
+      <aside class="sidebar" aria-label="Library navigation">
+        <div class="sidebar-group">
+          <span class="sidebar-label">THE LIBRARY</span
+          ><a href="#patterns" class="sidebar-link active"
+            ><span class="four-dots" aria-hidden="true">⊞</span> All patterns
+            <span class="count">01</span></a
+          ><a href="#installation" class="sidebar-link"
+            ><span aria-hidden="true">↳</span> Installation</a
+          >
+        </div>
+        <div class="sidebar-group">
+          <span class="sidebar-label">PATTERNS</span
+          ><a href="#action-credits" class="sidebar-link"
+            ><span class="tiny-dot"></span> Action Credits
+            <span class="new-badge">NEW</span></a
+          >
+          <div class="sidebar-sub">
+            <a href="#action-credits" data-select-variant="grid">Reward cards</a
+            ><a href="#action-credits" data-select-variant="list"
+              >Onboarding checklist</a
+            ><a href="#action-credits" data-select-variant="compact"
+              >Compact panel</a
+            >
+          </div>
+        </div>
+        <div class="sidebar-group">
+          <span class="sidebar-label">BUILD WITH IT</span
+          ><a href="#skill" class="sidebar-link"
+            ><span aria-hidden="true">✧</span> Agent skill</a
+          ><a href="#approach" class="sidebar-link"
+            ><span aria-hidden="true">◇</span> Design principles</a
+          ><a
+            data-repo-path="/blob/main/CONTRIBUTING.md"
+            href="https://github.com/jIrwinCline/game-ui/blob/main/CONTRIBUTING.md"
+            class="sidebar-link"
+            ><span aria-hidden="true">↗</span> Contribute</a
+          >
+        </div>
+        <div class="sidebar-note">
+          <span class="status-dot"></span> Built in the open.
+          <p>A small library, growing<br />one useful pattern at a time.</p>
+          <a data-repo href="https://github.com/jIrwinCline/game-ui"
+            >Follow the project <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </aside>
+      <main id="main">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              <span class="status-dot"></span> THE OPEN-SOURCE GAMIFICATION
+              LIBRARY
+            </div>
+            <h1 id="hero-title">
+              Small actions.<br /><span>Meaningful growth.</span>
+            </h1>
+            <p>
+              Give people a reason to take the next step.<br
+                class="desktop-break"
+              />
+              Thoughtful UI patterns, paired with skills that<br
+                class="desktop-break"
+              />
+              help your agent build them into your SaaS.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#action-credits"
+                >Explore the first pattern <span aria-hidden="true">↗</span></a
+              ><a
+                class="text-link"
+                data-repo
+                href="https://github.com/jIrwinCline/game-ui"
+                >Own the code <span aria-hidden="true">↗</span></a
+              >
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit orbit-three"></div>
+            <div class="spark s1">+</div>
+            <div class="spark s2">+</div>
+            <div class="floating-reward">
+              <span class="reward-mark">✓</span>
+              <div>First milestone<span>Completed. Nicely done.</span></div>
+              <b>+25</b>
+            </div>
+            <div class="small-reward">
+              <span>✧</span> A little more momentum.
+            </div>
+            <div class="art-caption">ACTION → PROGRESS → REWARD</div>
+          </div>
+        </section>
+        <div class="library-meta" id="patterns">
+          <span><b>01</b> pattern</span><span><b>03</b> live examples</span
+          ><span><b>MIT</b> licensed</span
+          ><span class="meta-end">Small by design. Yours to adapt.</span>
+        </div>
+        <section
+          id="action-credits"
+          class="pattern-section"
+          aria-labelledby="pattern-title"
+        >
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow muted">
+                PATTERN 001 <span class="separator">/</span> ACTIVATION & GROWTH
+              </div>
+              <h2 id="pattern-title">
+                Action Credits<span class="available-tag">Available</span>
+              </h2>
+              <p>Do something useful. Earn a little more of the product.</p>
+            </div>
+            <a class="button outline small" href="#installation"
+              >Get this pattern <span aria-hidden="true">↓</span></a
+            >
+          </div>
+          <div class="workbench">
+            <div class="workbench-toolbar">
+              <div class="tabs" role="tablist" aria-label="Pattern content">
+                <button
+                  id="tab-preview"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="panel-preview"
+                  data-tab="preview"
+                >
+                  Preview</button
+                ><button
+                  id="tab-code"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="panel-code"
+                  data-tab="code"
+                  tabindex="-1"
+                >
+                  Code</button
+                ><button
+                  id="tab-skill"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="panel-skill"
+                  data-tab="skill"
+                  tabindex="-1"
+                >
+                  Agent skill <span aria-hidden="true">✧</span>
+                </button>
+              </div>
+              <div class="preview-actions">
+                <span class="sandbox-label"><span></span> Interactive demo</span
+                ><button
+                  id="reset-demo"
+                  class="icon-button"
+                  aria-label="Reset demo"
+                  title="Reset demo"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 10a9 9 0 1 1 2 8M3 4v6h6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div
+              id="panel-preview"
+              role="tabpanel"
+              aria-labelledby="tab-preview"
+            >
+              <div class="variant-toolbar">
+                <div class="segmented" aria-label="Layout variant">
+                  <button data-variant="grid" aria-pressed="true">
+                    Cards <span>01</span></button
+                  ><button data-variant="list" aria-pressed="false">
+                    Checklist <span>02</span></button
+                  ><button data-variant="compact" aria-pressed="false">
+                    Compact <span>03</span>
+                  </button>
+                </div>
+                <button
+                  id="demo-theme"
+                  class="demo-theme-switch"
+                  aria-label="Switch demo to dark theme"
+                >
+                  ◐ <span>Light</span>
+                </button>
+              </div>
+              <div class="demo-stage" id="demo-stage">
+                <div class="example-window">
+                  <div class="window-chrome">
+                    <div class="window-dots"><i></i><i></i><i></i></div>
+                    <span id="demo-context">Your app / Getting started</span
+                    ><span class="window-lock" aria-hidden="true">⌁</span>
+                  </div>
+                  <div class="component-wrap">
+                    <action-credits
+                      id="main-demo"
+                      theme="light"
+                    ></action-credits>
+                    <div class="demo-complete" id="demo-complete" hidden>
+                      <span class="demo-complete-mark">↗</span>
+                      <h3>On to the good stuff.</h3>
+                      <p>
+                        In your app, Continue takes people straight to the
+                        product.<br />Rewards stay optional, and progress is
+                        there when they return.
+                      </p>
+                      <button class="button primary" id="return-demo">
+                        Back to the demo
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="preview-caption">
+                <span
+                  ><span class="tiny-dot"></span> Try an action to see progress
+                  and rewards.</span
+                ><span>Demo credits only · Reset any time</span>
+              </div>
+            </div>
+            <div
+              id="panel-code"
+              role="tabpanel"
+              aria-labelledby="tab-code"
+              hidden
+            >
+              <div class="code-heading">
+                <span>JavaScript · Integration example</span
+                ><button class="copy-button" id="copy-code">
+                  Copy code <span aria-hidden="true">⧉</span>
+                </button>
+              </div>
+              <pre><code id="integration-code"></code></pre>
+              <div class="code-footnote">
+                The component emits an event. Your server verifies the action
+                and returns the updated state.<a
+                  href="./components/action-credits/action-credits.js"
+                  download
+                  >Download component ↗</a
+                >
+              </div>
+            </div>
+            <div
+              id="panel-skill"
+              role="tabpanel"
+              aria-labelledby="tab-skill"
+              hidden
+            >
+              <div class="skill-preview">
+                <div class="skill-symbol">✧</div>
+                <div>
+                  <span class="eyebrow muted"
+                    >THE IMPLEMENTATION COMPANION</span
+                  >
+                  <h3>
+                    A component shows the interface.<br />A skill connects the
+                    whole feature.
+                  </h3>
+                  <p>
+                    Action Credits helps your agent understand your SaaS, choose
+                    worthwhile actions, match your UI, and connect rewards to
+                    your existing credit system.
+                  </p>
+                  <div class="skill-tags">
+                    <span>Product discovery</span><span>Reward economics</span
+                    ><span>Verification</span><span>Credit accounting</span>
+                  </div>
+                  <a class="button primary" href="#skill"
+                    >Install the skill <span aria-hidden="true">↓</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pattern-details">
+            <div>
+              <span class="detail-label">THE MECHANIC</span>
+              <p>
+                Small, optional actions help people get started. Useful rewards
+                create room to explore more.
+              </p>
+            </div>
+            <div>
+              <span class="detail-label">WHERE IT FITS</span>
+              <p>
+                Welcome screens, onboarding checklists, credit pages, and
+                return-to-product moments.
+              </p>
+            </div>
+            <div>
+              <span class="detail-label">MAKE IT YOURS</span>
+              <p>
+                Own the source. Adapt the actions, tokens, copy, and reward
+                rules to the product you’re building.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section
+          class="installation-section"
+          id="installation"
+          aria-labelledby="installation-title"
+        >
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow muted">FROM EXAMPLE TO YOUR APP</div>
+              <h2 id="installation-title">
+                Two pieces. One thoughtful feature.
+              </h2>
+              <p>Use the interface, the implementation skill, or both.</p>
+            </div>
+          </div>
+          <div class="install-grid">
+            <article class="install-card">
+              <div class="install-step">
+                01 <span>THE COMPONENT</span><span class="install-icon">⧉</span>
+              </div>
+              <h3>Start with the interface.</h3>
+              <p>
+                A dependency-free Web Component. Bring your own framework,
+                styles, and credit system.
+              </p>
+              <pre
+                class="mini-code"
+              ><code>&lt;script type="module"&#10;  src="./action-credits.js"&gt;&lt;/script&gt;&#10;&#10;&lt;action-credits&gt;&lt;/action-credits&gt;</code></pre>
+              <a
+                class="button outline"
+                href="./components/action-credits/action-credits.js"
+                download
+                >Download source <span aria-hidden="true">↓</span></a
+              ><a
+                class="small-link"
+                data-repo-path="/tree/main/components/action-credits"
+                href="https://github.com/jIrwinCline/game-ui/tree/main/components/action-credits"
+                >Read the component API ↗</a
+              >
+            </article>
+            <article class="install-card" id="skill">
+              <div class="install-step">
+                02 <span>THE AGENT SKILL</span
+                ><span class="install-icon">✧</span>
+              </div>
+              <h3>Let your agent connect the dots.</h3>
+              <p>
+                Install the skill folder in Codex. Then open your app’s project
+                and tell it what you want to grow.
+              </p>
+              <pre
+                class="mini-code"
+              ><code>Use $action-credits to add an&#10;optional rewards flow to this app.&#10;Match our existing UI and credits.</code></pre>
+              <a
+                class="button primary"
+                href="./downloads/action-credits.zip"
+                download
+                >Download skill <span aria-hidden="true">↓</span></a
+              ><button class="small-link text-button" id="open-install">
+                Show installation steps ↗
+              </button>
+            </article>
+          </div>
+        </section>
+        <section
+          id="approach"
+          class="approach-section"
+          aria-labelledby="approach-title"
+        >
+          <div class="approach-intro">
+            <div class="eyebrow muted">A BETTER KIND OF GAMIFICATION</div>
+            <h2 id="approach-title">Help people move forward.</h2>
+            <p>
+              The goal is a better product experience.<br />Build the reward
+              around that.
+            </p>
+            <a href="./patterns/action-credits/" class="text-link"
+              >Read the pattern guide ↗</a
+            >
+          </div>
+          <div class="principles">
+            <article>
+              <span>01</span>
+              <div>
+                <h3>Value before vanity.</h3>
+                <p>
+                  Reward a first useful result or meaningful collaboration. Pick
+                  actions that matter to the person doing them.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>02</span>
+              <div>
+                <h3>Always an open door.</h3>
+                <p>
+                  Keep rewards optional. Let people skip, continue, and return
+                  without losing their place.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>03</span>
+              <div>
+                <h3>Real progress. Honest rewards.</h3>
+                <p>
+                  A click is a beginning, not proof of completion. Verify the
+                  action and award credits once.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="contribute-banner">
+          <div>
+            <span class="eyebrow">THE FIRST OF MANY</span>
+            <h2>What should we build next?</h2>
+            <p>
+              A useful growth mechanic deserves a great implementation.<br />Suggest
+              a pattern, improve an example, or contribute a skill.
+            </p>
+          </div>
+          <a
+            class="button primary"
+            data-repo-path="/issues"
+            href="https://github.com/jIrwinCline/game-ui/issues"
+            >Shape the library <span aria-hidden="true">↗</span></a
+          >
+        </section>
+        <footer>
+          <a href="#top" class="footer-brand">Game UI <span>© 2026</span></a
+          ><span>Open source. Yours to build on.</span>
+          <div>
+            <a href="./LICENSE.txt">MIT license</a
+            ><a data-repo href="https://github.com/jIrwinCline/game-ui"
+              >GitHub ↗</a
+            >
+          </div>
+        </footer>
+      </main>
+    </div>
+    <dialog id="install-dialog" aria-labelledby="install-dialog-title">
+      <div class="dialog-top">
+        <span class="eyebrow muted">GET STARTED</span
+        ><button
+          class="icon-button"
+          id="close-install"
+          aria-label="Close installation steps"
+        >
+          ×
+        </button>
+      </div>
+      <h2 id="install-dialog-title">Install Action Credits</h2>
+      <ol>
+        <li>
+          <a href="./downloads/action-credits.zip" download
+            >Download and extract the skill ZIP.</a
+          >
+        </li>
+        <li>
+          Move the entire <code>action-credits</code> folder into
+          <code>~/.codex/skills/</code>. Keep an existing version if you have
+          one.
+        </li>
+        <li>
+          Open your app’s project in a new Codex chat and invoke
+          <code>$action-credits</code>.
+        </li>
+      </ol>
+      <div class="install-prompt">
+        <code id="skill-prompt"
+          >Use $action-credits to discover worthwhile reward actions for this
+          SaaS and implement optional onboarding in our existing style.</code
+        ><button class="copy-button" id="copy-prompt">Copy prompt ⧉</button>
+      </div>
+      <p class="dialog-note">
+        The skill is plain Markdown. Other agents can read it too; their
+        installation paths may differ.
+      </p>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

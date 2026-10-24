@@ -1,0 +1,62 @@
+# Optional planning/handoff artifact; adapt to the host application.
+# Null values are unresolved decisions, not valid production defaults.
+# Never load this into a live reward service without validation.
+pattern: action-credits
+schema_version: 1
+product:
+  name: null
+  repository: null
+  official_url: null
+  desired_user_outcome: null
+  growth_objective: null
+  evidence_sources: []
+integration:
+  onboarding_location: null
+  return_location: null
+  reused_ui_components: []
+  credit_service: null
+  authentication_and_ownership: null
+program:
+  id: null
+  enabled: false
+  beneficiary_type: null # user, workspace, or the app's existing owner type
+  eligibility: null
+  historical_completion_rule: null
+  credit_unit: null
+  maximum_credits_per_beneficiary: null
+  program_budget: null # explicitly state if no additional global cap is needed
+  marginal_cost_assumption: null
+  existing_expiry_and_spending_rules: null
+  offer_change_policy: null
+  pause_and_pending_offer_policy: null
+actions: []
+# Populate actions using this shape; IDs and evidence adapters are app-specific.
+action_shape:
+  id: null
+  entitlement_key: null # stable across copy/amount/version changes
+  occurrence_rule: null # lifetime or a defined qualifying event ID
+  enabled: false
+  title: null
+  user_benefit: null
+  business_benefit: null
+  destination: null
+  qualifying_condition: null
+  reward_amount: null
+  verification_mode: null # product, provider, manual, or honor_system
+  evidence_source_and_identity_binding: null
+  reward_trigger: null # automatic or explicit_claim
+  expected_user_effort: null
+  external_policy_check: null # source URL, checked date, finding, disposition
+  missing_dependencies: []
+validation:
+  relevant_economic_invariants: []
+  ui_preview_and_states: []
+  checks_run_and_results: []
+measurement:
+  existing_analytics: null
+  success_metric: null
+  cost_metric: null
+handoff:
+  configured: []
+  remaining_setup: []
+  rollout_status: null

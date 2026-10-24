@@ -1,0 +1,4 @@
+interface:
+  display_name: "Action Credits"
+  short_description: "Build onboarding actions that earn product credits"
+  default_prompt: "Use $action-credits to discover valuable reward actions for this SaaS and implement an optional onboarding flow in its existing style."

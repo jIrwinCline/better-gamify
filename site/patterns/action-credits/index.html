@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Action Credits — SaaS onboarding rewards component & skill | Game UI
+    </title>
+    <meta
+      name="description"
+      content="Build an optional actions-for-credits onboarding checklist. Explore a free reward UI component, three layouts, and an implementation skill for verification and credit accounting."
+    />
+    <link
+      rel="canonical"
+      href="https://example.invalid/game-ui/patterns/action-credits/"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Action Credits — SaaS onboarding rewards"
+    />
+    <meta
+      property="og:description"
+      content="A reusable reward checklist and implementation skill. Open source, optional by design, and adaptable to your app."
+    />
+    <meta
+      property="og:image"
+      content="https://example.invalid/game-ui/social.png"
+    />
+    <link rel="icon" href="../../favicon.svg" />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="topbar">
+      <a class="brand" href="../../"
+        ><img src="../../favicon.svg" width="28" height="28" alt="" />Game
+        UI<span class="version">v0.1</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="../../#action-credits">Live examples</a
+        ><a href="../../#installation">Installation</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="github-nav" href="https://github.com/jIrwinCline/game-ui"
+          >GitHub ↗</a
+        >
+      </div>
+    </header>
+    <main id="main" class="guide">
+      <div class="eyebrow">PATTERN 001 / ONBOARDING & ACTIVATION</div>
+      <h1>Action Credits:<br />SaaS onboarding rewards.</h1>
+      <p class="guide-lead">
+        Help people reach their first useful result with an optional checklist
+        of actions that earn product credits.
+      </p>
+      <p>
+        Action Credits combines a reusable interface with an implementation
+        skill. The component presents actions and progress. The skill helps an
+        agent choose suitable rewards, fit your existing design, and connect
+        verified completion to your credit system.
+      </p>
+      <p>
+        <a class="button primary" href="../../#action-credits"
+          >Try three interactive examples ↗</a
+        >
+      </p>
+      <h2>How actions for credits work</h2>
+      <ol>
+        <li>
+          <strong>Choose a meaningful action.</strong> Creating a first project,
+          exporting a result, or welcoming a teammate can help someone get more
+          value from your app.
+        </li>
+        <li>
+          <strong>Explain the reward up front.</strong> Show what must happen,
+          how many credits it earns, and any relevant conditions before the
+          person starts.
+        </li>
+        <li>
+          <strong>Verify completion.</strong> A trusted application event or
+          supported provider check establishes what happened. Opening a link
+          alone does not prove completion.
+        </li>
+        <li>
+          <strong>Award once.</strong> Your server records the reward and
+          returns the updated state. The interface shows the confirmed credit
+          award.
+        </li>
+      </ol>
+      <h2>Three layouts, the same reward flow</h2>
+      <ul>
+        <li>
+          <strong>Reward cards:</strong> a spacious welcome screen with clear
+          actions and reward amounts.
+        </li>
+        <li>
+          <strong>Onboarding checklist:</strong> compact rows that sit naturally
+          beside an existing setup flow.
+        </li>
+        <li>
+          <strong>Compact panel:</strong> a smaller bonus-credit surface for an
+          account page or dashboard.
+        </li>
+      </ul>
+      <p>
+        All three layouts support light and dark themes, keyboard interaction,
+        pending and awarded states, and an immediate Continue action. Styling is
+        controlled through CSS variables so the component can adapt to your app.
+      </p>
+      <h2>What to reward</h2>
+      <p>
+        Start with a small set of actions that have value for both the user and
+        the product. A first successful export is more meaningful than clicking
+        an export button. An accepted teammate invitation is more useful than
+        sending a batch of invitations. Keep existing signup and referral
+        bonuses in view so the same action does not earn the same reward twice.
+      </p>
+      <p>
+        Social follows, stars, subscriptions, and shares need a current check of
+        the destination platform's rules and verification capabilities. They are
+        candidates, not mandatory tasks. The implementation skill includes an
+        action-selection guide and alternatives when a social incentive is
+        unsuitable.
+      </p>
+      <h2>Install the component</h2>
+      <p>
+        <a href="../../components/action-credits/action-credits.js" download
+          >Download action-credits.js</a
+        >
+        and import it as an ES module. Place
+        <code>&lt;action-credits&gt;&lt;/action-credits&gt;</code> in your page.
+        Populate its <code>actions</code> property with server-provided state
+        and respond to its <code>action-request</code> event in your
+        application.
+      </p>
+      <p>
+        The component has no dependencies and does not issue credits, call a
+        provider, or store an authoritative balance. You own the source and the
+        integration.
+        <a
+          href="https://github.com/jIrwinCline/game-ui/tree/main/components/action-credits"
+          >Read the full component API.</a
+        >
+      </p>
+      <h2>Install the implementation skill</h2>
+      <p>
+        <a href="../../downloads/action-credits.zip" download
+          >Download the Action Credits skill</a
+        >, extract it, and copy the entire <code>action-credits</code> folder
+        into <code>~/.codex/skills/</code>. Keep any existing version until you
+        have compared it. Open your application project in a new chat and invoke
+        <code>$action-credits</code>.
+      </p>
+      <p>
+        The skill guides product discovery, action selection, reward economics,
+        UI integration, server verification, duplicate prevention, and relevant
+        testing. It asks for missing product decisions while continuing
+        independent implementation work.
+      </p>
+      <h2>Keep the experience optional</h2>
+      <p>
+        Users should be able to continue into the product, skip an action, and
+        return to their progress. A delayed provider check should never trap
+        someone in onboarding. Show pending and retry states honestly, and
+        reserve celebration for a confirmed award.
+      </p>
+      <p class="note">
+        The gallery uses simulated actions and demo credits. Reward amounts are
+        illustrative, not recommended pricing. Production awards belong in your
+        application's authenticated credit system.
+      </p>
+      <p>
+        <a class="button primary" href="../../#action-credits"
+          >Explore Action Credits ↗</a
+        >
+      </p>
+      <footer>
+        <a href="../../" class="footer-brand">Game UI</a
+        ><a href="../../LICENSE.txt">MIT licensed</a
+        ><a href="https://github.com/jIrwinCline/game-ui/issues"
+          >Suggest a pattern ↗</a
+        >
+      </footer>
+    </main>
+  </body>
+</html>
