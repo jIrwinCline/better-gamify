@@ -1,6 +1,6 @@
-# Contributing to Game UI
+# Contributing to Better Gamify
 
-Game UI is a small library of gamification patterns for software products. Each
+Better Gamify is a small library of gamification patterns for software products. Each
 pattern should help a user do something useful and come with both a working UI
 example and instructions for integrating it into an existing application.
 

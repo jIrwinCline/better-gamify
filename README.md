@@ -1,10 +1,10 @@
-# Game UI
+# Better Gamify
 
 **Gamification components for SaaS, with the skills to make them work in your app.**
 
-[Explore the live gallery](https://jirwincline.github.io/game-ui/) ·
-[Action Credits guide](https://jirwincline.github.io/game-ui/patterns/action-credits/) ·
-[Download the skill](https://jirwincline.github.io/game-ui/downloads/action-credits.zip)
+[Explore the live gallery](https://jirwincline.github.io/better-gamify/) ·
+[Action Credits guide](https://jirwincline.github.io/better-gamify/patterns/action-credits/) ·
+[Download the skill](https://jirwincline.github.io/better-gamify/downloads/action-credits.zip)
 
 Browse an interactive example, take the component, and use its implementation
 skill to adapt the pattern to your product's design, data, and business rules.
@@ -125,6 +125,10 @@ See the [integration guide](docs/action-credits.md),
 
 Have a useful pattern or an improvement? Read [CONTRIBUTING.md](CONTRIBUTING.md).
 Code and documentation are available under the [MIT License](LICENSE).
+
+The gallery uses [Press Start 2P](site/fonts/press-start-2p.ttf) by CodeMan38,
+licensed separately under the [SIL Open Font License](site/fonts/press-start-2p-OFL.txt).
+Retain its license notice when redistributing the font.
 
 ## Publishing the gallery
 

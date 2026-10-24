@@ -1,6 +1,6 @@
-# Working on Game UI
+# Working on Better Gamify
 
-Game UI pairs small gamification components with implementation skills that adapt
+Better Gamify pairs small gamification components with implementation skills that adapt
 them to an existing product. The first pattern is Action Credits.
 
 - `components/` contains reusable browser components. Keep these independent of

@@ -15,6 +15,8 @@ const types = {
   ".txt": "text/plain",
   ".xml": "application/xml",
   ".zip": "application/zip",
+  ".ttf": "font/ttf",
+  ".png": "image/png",
 };
 createServer(async (req, res) => {
   try {

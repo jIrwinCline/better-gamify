@@ -1,1 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#111310"/><g fill="none" stroke="#272d25"><path d="M0 90h1200M0 540h1200M80 0v630M1120 0v630"/><circle cx="980" cy="315" r="175"/><circle cx="980" cy="315" r="120"/><circle cx="980" cy="315" r="65"/></g><text x="100" y="160" font-family="Arial,sans-serif" fill="#c5f58a" font-size="28" font-weight="bold">GAME UI / OPEN SOURCE</text><text x="100" y="290" font-family="Arial,sans-serif" fill="#f3f5ee" font-size="76" font-weight="bold">Small actions.</text><text x="100" y="380" font-family="Arial,sans-serif" fill="#f3f5ee" font-size="76" font-weight="bold">Meaningful growth.</text><text x="100" y="470" font-family="Arial,sans-serif" fill="#9da695" font-size="28">Gamification components + implementation skills for SaaS.</text><path d="m935 312 28 28 64-67" stroke="#c5f58a" stroke-width="15" fill="none"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <title>Better Gamify — Gamification components for SaaS</title>
+  <desc>Small actions. Meaningful growth. Open-source components and implementation skills, with a lime pixel B emblem.</desc>
+  <rect width="1200" height="630" fill="#111310"/>
+  <g fill="none" stroke="#272d25">
+    <path d="M0 90h1200M0 540h1200M80 0v630M1120 0v630"/>
+    <circle cx="1000" cy="310" r="146"/>
+    <circle cx="1000" cy="310" r="112" stroke-dasharray="3 12"/>
+  </g>
+  <text x="100" y="153" font-family="Arial,sans-serif" fill="#c5f58a" font-size="27" font-weight="bold" letter-spacing="1">BETTER GAMIFY</text>
+  <text x="100" y="276" font-family="Arial,sans-serif" fill="#f3f5ee" font-size="70" font-weight="bold">Small actions.</text>
+  <text x="100" y="364" font-family="Arial,sans-serif" fill="#f3f5ee" font-size="70" font-weight="bold">Meaningful growth.</text>
+  <text x="100" y="433" font-family="Arial,sans-serif" fill="#b3bbac" font-size="25">Gamification components + implementation skills for SaaS.</text>
+  <g transform="translate(100 472)">
+    <rect width="275" height="35" rx="5" fill="#1f281a" stroke="#3c4d2e"/>
+    <text x="16" y="23" font-family="monospace" fill="#c5f58a" font-size="16" letter-spacing="1">OPEN SOURCE / LEVEL 01</text>
+  </g>
+  <rect x="939" y="256" width="122" height="122" rx="21" fill="#334428"/>
+  <rect x="939" y="248" width="122" height="122" rx="21" fill="#c5f58a"/>
+  <path d="M970 267h12v12h-12zM982 267h12v12h-12zM994 267h12v12h-12zM1006 267h12v12h-12zM970 279h12v12h-12zM1018 279h12v12h-12zM970 291h12v12h-12zM1018 291h12v12h-12zM970 303h12v12h-12zM982 303h12v12h-12zM994 303h12v12h-12zM1006 303h12v12h-12zM970 315h12v12h-12zM1018 315h12v12h-12zM970 327h12v12h-12zM1018 327h12v12h-12zM970 339h12v12h-12zM982 339h12v12h-12zM994 339h12v12h-12zM1006 339h12v12h-12z" fill="#152113"/>
+  <g fill="#c5f58a">
+    <path d="M1095 208h8v-8h8v8h8v8h-8v8h-8v-8h-8z"/>
+    <path d="M877 387h6v-6h6v6h6v6h-6v6h-6v-6h-6z"/>
+    <rect x="899" y="199" width="6" height="6"/>
+    <rect x="1087" y="413" width="6" height="6"/>
+  </g>
+</svg>

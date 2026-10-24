@@ -25,7 +25,7 @@ for (const page of ["index.html", "patterns/action-credits/index.html"]) {
   const html = await readFile(file, "utf8");
   await writeFile(
     file,
-    html.replaceAll("https://example.invalid/game-ui/", config.siteUrl),
+    html.replaceAll("https://example.invalid/better-gamify/", config.siteUrl),
   );
 }
 await writeFile(

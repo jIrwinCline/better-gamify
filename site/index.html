@@ -3,38 +3,46 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Game UI — Open-source gamification components for SaaS</title>
+    <title>Better Gamify — Open-source gamification components for SaaS</title>
     <meta
       name="description"
       content="Explore live SaaS gamification examples and own the code. Action Credits pairs an adaptable onboarding rewards component with an AI implementation skill. Free and MIT licensed."
     />
     <meta name="theme-color" content="#111310" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-    <link rel="canonical" href="https://example.invalid/game-ui/" />
+    <link rel="canonical" href="https://example.invalid/better-gamify/" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Better Gamify" />
     <meta
       property="og:title"
-      content="Game UI — Small actions. Meaningful growth."
+      content="Better Gamify — Small actions. Meaningful growth."
     />
     <meta
       property="og:description"
       content="Open-source gamification components and implementation skills for SaaS. Explore the first pattern: Action Credits."
     />
-    <meta property="og:url" content="https://example.invalid/game-ui/" />
+    <meta property="og:url" content="https://example.invalid/better-gamify/" />
     <meta
       property="og:image"
-      content="https://example.invalid/game-ui/social.png"
+      content="https://example.invalid/better-gamify/social.png"
     />
     <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="preload"
+      href="./fonts/press-start-2p.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
     <link rel="stylesheet" href="./styles.css" />
     <script type="module" src="./app.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="Game UI home"
+      <a class="brand" href="#top" aria-label="Better Gamify home"
         ><img src="./favicon.svg" width="28" height="28" alt="" /><span
-          >Game UI</span
+          >Better Gamify</span
         ><span class="version">v0.1</span></a
       >
       <nav aria-label="Main navigation">
@@ -57,8 +65,9 @@
           </svg></button
         ><a
           class="github-nav"
+          aria-label="GitHub repository"
           data-repo
-          href="https://github.com/jIrwinCline/game-ui"
+          href="https://github.com/jIrwinCline/better-gamify"
           ><svg viewBox="0 0 24 24" aria-hidden="true">
             <path
               d="M9 19c-4.3 1.3-4.3-2.3-6-2.8M15 22v-3.4c0-1 .1-1.5-.5-2.1 3.3-.4 6.8-1.6 6.8-7.3a5.7 5.7 0 0 0-1.5-4 5.3 5.3 0 0 0-.1-3.9s-1.3-.4-4.2 1.5a14 14 0 0 0-7.6 0C5 1 3.7 1.3 3.7 1.3a5.3 5.3 0 0 0-.1 3.9 5.7 5.7 0 0 0-1.5 4c0 5.7 3.5 6.9 6.8 7.3-.6.6-.6 1.2-.5 2.1V22"
@@ -101,7 +110,7 @@
             ><span aria-hidden="true">◇</span> Design principles</a
           ><a
             data-repo-path="/blob/main/CONTRIBUTING.md"
-            href="https://github.com/jIrwinCline/game-ui/blob/main/CONTRIBUTING.md"
+            href="https://github.com/jIrwinCline/better-gamify/blob/main/CONTRIBUTING.md"
             class="sidebar-link"
             ><span aria-hidden="true">↗</span> Contribute</a
           >
@@ -109,7 +118,7 @@
         <div class="sidebar-note">
           <span class="status-dot"></span> Built in the open.
           <p>A small library, growing<br />one useful pattern at a time.</p>
-          <a data-repo href="https://github.com/jIrwinCline/game-ui"
+          <a data-repo href="https://github.com/jIrwinCline/better-gamify"
             >Follow the project <span aria-hidden="true">↗</span></a
           >
         </div>
@@ -139,26 +148,56 @@
               ><a
                 class="text-link"
                 data-repo
-                href="https://github.com/jIrwinCline/game-ui"
+                href="https://github.com/jIrwinCline/better-gamify"
                 >Own the code <span aria-hidden="true">↗</span></a
               >
             </div>
           </div>
           <div class="hero-art" aria-hidden="true">
-            <div class="orbit orbit-one"></div>
-            <div class="orbit orbit-two"></div>
-            <div class="orbit orbit-three"></div>
-            <div class="spark s1">+</div>
-            <div class="spark s2">+</div>
-            <div class="floating-reward">
-              <span class="reward-mark">✓</span>
-              <div>First milestone<span>Completed. Nicely done.</span></div>
-              <b>+25</b>
+            <div class="quest-grid"></div>
+            <span class="pixel-spark spark-one">✦</span>
+            <span class="pixel-spark spark-two">+</span>
+            <div class="milestone-card">
+              <div class="milestone-top">
+                <span>SMALL WIN #001</span><span>✦</span>
+              </div>
+              <svg
+                class="pixel-star"
+                viewBox="0 0 96 96"
+                shape-rendering="crispEdges"
+              >
+                <path
+                  fill="#5a8d37"
+                  d="M40 10h16v16h8v8h24v16H80v8h-8v24H56v-8H40v8H24V58h-8v-8H8V34h24v-8h8z"
+                />
+                <path
+                  fill="#c5f58a"
+                  d="M40 6h16v16h8v8h24v16H80v8h-8v24H56v-8H40v8H24V54h-8v-8H8V30h24v-8h8z"
+                />
+                <path fill="#e2ffbc" d="M40 6h16v8H48v16H32v8H8v-8h24v-8h8z" />
+                <path
+                  fill="#23351b"
+                  d="M32 38h8v12h-8zm24 0h8v12h-8zM40 54h16v6H40z"
+                />
+                <path fill="#8fc45d" d="M24 50h8v6h-8zm40 0h8v6h-8z" />
+              </svg>
+              <strong class="milestone-title">FIRST WIN!</strong>
+              <span class="milestone-copy"
+                >Small steps. A reason to keep going.</span
+              >
+              <div class="milestone-meter">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="milestone-bottom">
+                <span>MOMENTUM UNLOCKED</span><b>+25</b>
+              </div>
             </div>
-            <div class="small-reward">
-              <span>✧</span> A little more momentum.
+            <div class="reward-float">
+              <span class="pixel-coin">+</span>
+              <div>
+                Nicely done.<span>A little progress goes a long way.</span>
+              </div>
             </div>
-            <div class="art-caption">ACTION → PROGRESS → REWARD</div>
           </div>
         </section>
         <div class="library-meta" id="patterns">
@@ -184,6 +223,38 @@
             <a class="button outline small" href="#installation"
               >Get this pattern <span aria-hidden="true">↓</span></a
             >
+          </div>
+          <div
+            class="explorer-quest"
+            id="explorer-quest"
+            aria-label="Explore the pattern"
+          >
+            <div class="quest-intro">
+              <span class="quest-label">SIDE QUEST</span
+              ><strong>Get to know the pattern</strong>
+            </div>
+            <div class="quest-steps" aria-label="Exploration steps">
+              <button data-quest="reward">
+                <span class="quest-check" aria-hidden="true">1</span
+                ><span>Try a reward</span
+                ><span class="sr-only quest-state"> — not explored</span>
+              </button>
+              <button data-quest="code">
+                <span class="quest-check" aria-hidden="true">2</span
+                ><span>View the code</span
+                ><span class="sr-only quest-state"> — not explored</span>
+              </button>
+              <button data-quest="skill">
+                <span class="quest-check" aria-hidden="true">3</span
+                ><span>Meet the skill</span
+                ><span class="sr-only quest-state"> — not explored</span>
+              </button>
+            </div>
+            <div class="quest-progress">
+              <span id="quest-count">0 / 3</span
+              ><span id="quest-caption">explored</span>
+            </div>
+            <span class="sr-only" id="quest-status" role="status"></span>
           </div>
           <div class="workbench">
             <div class="workbench-toolbar">
@@ -400,7 +471,7 @@
               ><a
                 class="small-link"
                 data-repo-path="/tree/main/components/action-credits"
-                href="https://github.com/jIrwinCline/game-ui/tree/main/components/action-credits"
+                href="https://github.com/jIrwinCline/better-gamify/tree/main/components/action-credits"
                 >Read the component API ↗</a
               >
             </article>
@@ -489,16 +560,17 @@
           <a
             class="button primary"
             data-repo-path="/issues"
-            href="https://github.com/jIrwinCline/game-ui/issues"
+            href="https://github.com/jIrwinCline/better-gamify/issues"
             >Shape the library <span aria-hidden="true">↗</span></a
           >
         </section>
         <footer>
-          <a href="#top" class="footer-brand">Game UI <span>© 2026</span></a
+          <a href="#top" class="footer-brand"
+            >Better Gamify <span>© 2026</span></a
           ><span>Open source. Yours to build on.</span>
           <div>
             <a href="./LICENSE.txt">MIT license</a
-            ><a data-repo href="https://github.com/jIrwinCline/game-ui"
+            ><a data-repo href="https://github.com/jIrwinCline/better-gamify"
               >GitHub ↗</a
             >
           </div>

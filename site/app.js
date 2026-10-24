@@ -55,7 +55,11 @@ demo.addEventListener("action-request", ({ detail }) => {
     if (startedGeneration !== generation) return;
     action.status = "awarded";
     demo.actions = actions;
-    notify(`+${action.reward} demo credits. That’s a little more momentum.`);
+    const questJustCompleted = markExplored("reward");
+    if (!questJustCompleted) {
+      celebrateReward();
+      notify(`+${action.reward} demo credits. Small win, nicely done.`);
+    }
   }, 850);
   pendingTimers.add(timer);
 });
@@ -84,6 +88,7 @@ $("reset-demo").addEventListener("click", () => {
 });
 
 function selectTab(name, focus = false) {
+  if (name === "code" || name === "skill") markExplored(name);
   document.querySelectorAll("[data-tab]").forEach((button) => {
     const selected = button.dataset.tab === name;
     button.setAttribute("aria-selected", String(selected));
@@ -156,7 +161,9 @@ function setPageTheme(theme) {
   );
 }
 try {
-  const saved = localStorage.getItem("game-ui.theme");
+  const saved =
+    localStorage.getItem("better-gamify.theme") ??
+    localStorage.getItem("game-ui.theme");
   if (saved === "light" || saved === "dark") setPageTheme(saved);
 } catch {
   /* Preference storage is optional. */
@@ -166,11 +173,70 @@ $("theme-toggle").addEventListener("click", () => {
     document.documentElement.dataset.theme === "dark" ? "light" : "dark";
   setPageTheme(theme);
   try {
-    localStorage.setItem("game-ui.theme", theme);
+    localStorage.setItem("better-gamify.theme", theme);
   } catch {
     /* The current visit still works. */
   }
 });
+
+// This page-only quest reflects what visitors actually explore. No account,
+// persistent score, or product credits are attached to this progress.
+const explored = new Set();
+function markExplored(step) {
+  if (explored.has(step)) return false;
+  explored.add(step);
+  const button = document.querySelector(`[data-quest="${step}"]`);
+  button.classList.add("is-complete");
+  button.querySelector(".quest-check").textContent = "✓";
+  button.querySelector(".quest-state").textContent = " — explored";
+  $("quest-count").textContent = `${explored.size} / 3`;
+  const complete = explored.size === 3;
+  $("explorer-quest").classList.toggle("is-complete", complete);
+  $("quest-caption").textContent = complete ? "quest complete!" : "explored";
+  $("quest-status").textContent = complete
+    ? "Quest complete. You’ve explored the demo, code, and skill. Make it yours."
+    : `${explored.size} of 3 steps explored.`;
+  if (complete) {
+    celebrateReward();
+    notify("Quest complete. You’re ready to make it yours.");
+  }
+  return complete;
+}
+document.querySelectorAll("[data-quest]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const step = button.dataset.quest;
+    selectTab(step === "reward" ? "preview" : step);
+    if (step === "reward") {
+      returnToDemo();
+      demo.shadowRoot.querySelector("button:not(:disabled)")?.focus();
+    } else {
+      $("tab-" + step).focus();
+    }
+  });
+});
+
+let celebrationTimer;
+function celebrateReward() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.querySelector(".reward-burst")?.remove();
+  clearTimeout(celebrationTimer);
+  const burst = document.createElement("div");
+  burst.className = "reward-burst";
+  burst.setAttribute("aria-hidden", "true");
+  for (let i = 0; i < 12; i++) {
+    const pixel = document.createElement("i");
+    const angle = (Math.PI * 2 * i) / 12;
+    pixel.style.setProperty(
+      "--x",
+      `${Math.cos(angle) * (65 + (i % 3) * 20)}px`,
+    );
+    pixel.style.setProperty("--y", `${Math.sin(angle) * 75 - 40}px`);
+    pixel.style.setProperty("--r", `${i * 45}deg`);
+    burst.append(pixel);
+  }
+  document.body.append(burst);
+  celebrationTimer = setTimeout(() => burst.remove(), 900);
+}
 
 const integration = `import './action-credits.js';
 
