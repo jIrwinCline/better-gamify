@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Milestone Celebration — Component &amp; implementation skill | Better Gamify</title>
+  <meta name="description" content="Celebrate confirmed product milestones with inline, toast, and dialog variants. Includes event replay protection and an implementation skill." />
+  <link rel="canonical" href="https://example.invalid/better-gamify/patterns/milestone-celebration/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Better Gamify" />
+  <meta property="og:url" content="https://example.invalid/better-gamify/patterns/milestone-celebration/" />
+  <meta property="og:title" content="Milestone Celebration — Better Gamify" />
+  <meta property="og:description" content="Celebrate confirmed product milestones with inline, toast, and dialog variants. Includes event replay protection and an implementation skill." />
+  <meta property="og:image" content="https://example.invalid/better-gamify/social.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../../primitives.css" />
+  <script type="module" src="../../primitives.js"></script>
+</head>
+<body data-pattern="milestone-celebration">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="../../"><img src="../../favicon.svg" width="28" height="28" alt="" />Better Gamify<span class="version">v0.2</span></a>
+    <nav aria-label="Main navigation"><a href="../../">All components</a><a href="#implementation-skill">Implementation skill</a></nav>
+    <div class="nav-actions"><a class="github-nav" href="https://github.com/jIrwinCline/better-gamify">GitHub ↗</a></div>
+  </header>
+  <main id="main" class="guide primitive-guide">
+    <nav class="primitive-nav" aria-label="Components">
+      <a href="../action-credits/">Action Credits</a>
+      <a href="../reward-button/">Reward Button</a>
+      <a href="../xp-meter/">XP & Level Meter</a>
+      <a href="../milestone-celebration/" aria-current="page">Milestone Celebration</a>
+    </nav>
+    <div class="primitive-intro">
+      <div class="eyebrow">004 / FEEDBACK & CELEBRATION</div>
+      <h1>Milestone Celebration</h1>
+      <p class="guide-lead">A quiet acknowledgment for everyday progress. A little more delight when someone reaches something special.</p>
+    </div>
+    <div class="primitive-links">
+      <a class="button primary" href="../../components/milestone-celebration/milestone-celebration.js" download>Download component ↓</a>
+      <a class="button outline" href="../../downloads/milestone-celebration.zip" download>Download skill ↓</a>
+    </div>
+    <section class="primitive-workbench" aria-label="Milestone Celebration interactive demo">
+      <div class="primitive-toolbar">
+        <div class="primitive-variants" role="group" aria-label="Choose a variant">
+          <button type="button" data-primitive-variant="inline" aria-pressed="true">Inline</button>
+          <button type="button" data-primitive-variant="toast" aria-pressed="false">Toast</button>
+          <button type="button" data-primitive-variant="dialog" aria-pressed="false">Dialog</button>
+        </div>
+        <button type="button" class="primitive-theme" id="primitive-theme" aria-label="Switch preview to light theme">Dark preview</button>
+      </div>
+      <div class="primitive-stage" id="primitive-stage" data-demo-theme="dark">
+        <div class="primitive-empty" id="celebration-placeholder"><span aria-hidden="true">✦</span><p>Your next small win goes here.</p><small>Select a new demo milestone to try it.</small></div>
+<milestone-celebration id="primitive-demo" variant="inline" theme="dark"></milestone-celebration>
+      </div>
+      <div class="primitive-controls">
+        <button class="button primary" id="celebration-new" type="button">New demo milestone</button>
+<button class="button outline" id="celebration-replay" type="button" disabled>Replay same event</button>
+<button class="button outline" id="celebration-dismiss" type="button">Dismiss</button>
+        <button class="button outline primitive-reset" id="primitive-reset" type="button">Reset demo ↺</button>
+      </div>
+      <p class="primitive-feedback" id="demo-feedback" role="status" aria-live="polite">Choose a presentation, then trigger a new demo milestone. Replaying its event will not celebrate it twice.</p>
+      <p class="primitive-notice">Sandbox simulation. Every milestone and reward is an example. Effects respect your device's reduced-motion preference.</p>
+    </section>
+    <noscript><p class="note">Enable JavaScript to try the interactive demonstration. The integration guide and downloads remain available below.</p></noscript>
+    <div class="primitive-facts">
+      <section><h2>Choose the intensity</h2><p>Inline for a small win, toast for an acknowledgment, or dialog for a moment worth pausing for.</p></section>
+      <section><h2>No repeat fanfare</h2><p>The same event ID is shown once per component instance until its demo history is reset.</p></section>
+      <section><h2>Celebrate the real result</h2><p>For a first project, a finished course, an earned badge, or a genuine level-up.</p></section>
+    </div>
+    <div class="primitive-docs">
+      <h2>Match the moment.</h2>
+<p>Small, frequent wins work well inline or as a toast. Save a dialog for a substantial milestone that deserves focus. Keep the message specific: what happened, why it matters, and any reward already confirmed by your app.</p>
+<p>The component remembers event IDs during its current lifetime. Use the replay control to see a duplicate ignored. Dismiss hides the celebration; Reset clears this local event history so you can explore again.</p>
+<h2>Connect it to your application</h2>
+<p>Import the module and add <code>&lt;milestone-celebration&gt;</code>. Call <code>celebrate()</code> with a stable event ID, title, description, and optional reward label. It returns whether a new celebration was accepted.</p>
+      <div class="primitive-code">
+        <div class="code-heading"><span>APPLICATION INTEGRATION</span><button type="button" class="copy-button" data-copy-target="primitive-code">Copy code</button></div>
+        <pre tabindex="0" aria-label="Integration example"><code id="primitive-code">import './milestone-celebration.js';
+
+const celebration =
+  document.querySelector('milestone-celebration');
+celebration.setAttribute('variant', 'toast');
+
+// Your app supplies a confirmed milestone and a stable event ID.
+const event = await getLatestUnseenMilestone();
+if (event) {
+  const shown = celebration.celebrate({
+    id: event.id,
+    title: event.title,
+    description: event.description,
+    rewardLabel: event.rewardLabel,
+  });
+  if (shown) {
+    await recordMilestoneSeen(event.id);
+  }
+}</code></pre>
+      </div>
+      <p><code>getLatestUnseenMilestone()</code> and <code>recordMilestoneSeen()</code> are adapters to your application. Keep durable seen-state there when celebrations should stay dismissed across reloads, sessions, or devices. The component's event memory is local to one instance.</p>
+<p><code>dismiss()</code> hides the current presentation. <code>reset()</code> hides it and clears local event history. Use <code>inline</code>, <code>toast</code>, or <code>dialog</code>; the component does not create a milestone, grant its reward, or save account state.</p>
+      <p><a href="https://github.com/jIrwinCline/better-gamify/blob/main/docs/milestone-celebration.md">Read the integration guide ↗</a> · <a href="https://github.com/jIrwinCline/better-gamify/tree/main/components/milestone-celebration">Component source &amp; API ↗</a></p>
+      <h2 id="implementation-skill">A component. And a way to make it yours.</h2>
+      <p>The skill finds a meaningful success event, chooses an appropriate celebration intensity, and integrates it with the host's design and event history. It keeps feedback tied to a confirmed result and considers focus and reduced motion.</p>
+      <p>Download and extract the skill ZIP. Copy its entire <code>milestone-celebration</code> folder into <code>~/.codex/skills/</code>, then open your app's project in a new chat and use this prompt:</p>
+      <p class="primitive-skill-prompt" id="primitive-skill-prompt">$milestone-celebration Add milestone feedback to this app. Find a meaningful confirmed success, match the existing style, choose an appropriate inline, toast, or dialog treatment, and connect stable event IDs, dismissal, and reduced-motion behavior.</p>
+      <div class="primitive-skill-actions">
+        <button class="button outline" type="button" data-copy-target="primitive-skill-prompt">Copy skill prompt</button>
+        <a class="button primary" href="../../downloads/milestone-celebration.zip" download>Download skill ↓</a>
+      </div>
+      <p class="primitive-finish">A celebration should acknowledge progress and let people continue with what they came to do.</p>
+    </div>
+    <footer><a href="../../" class="footer-brand">Better Gamify</a><a href="../../LICENSE.txt">MIT licensed</a><a href="https://github.com/jIrwinCline/better-gamify/issues">Suggest a pattern ↗</a></footer>
+  </main>
+</body>
+</html>

@@ -1,7 +1,8 @@
 # Working on Better Gamify
 
 Better Gamify pairs small gamification components with implementation skills that adapt
-them to an existing product. The first pattern is Action Credits.
+them to an existing product. Available components are Action Credits, Reward
+Button, XP & Level Meter, and Milestone Celebration.
 
 - `components/` contains reusable browser components. Keep these independent of
   the showcase and of any particular application backend.

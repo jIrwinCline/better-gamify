@@ -1,9 +1,10 @@
 # Better Gamify component roadmap
 
-**Status: proposal · October 25, 2026.** These are ten proposed component
-families beyond the existing Action Credits pattern. They are not implemented
-or available in the live catalog yet. The sequence below is a recommendation,
-not a release commitment.
+**Status: first three additions available · October 25, 2026.** This roadmap
+contains ten component families beyond Action Credits. Reward Button,
+XP & Level Meter, and Milestone Celebration are implemented with examples and
+skills in v0.2. The other seven remain proposals; their build sequence is a
+recommendation, not a release commitment.
 
 Better Gamify should work across learning, fitness, productivity, community,
 commerce, creative tools, and SaaS. Each family should pair an interactive
@@ -21,8 +22,8 @@ Adapt that approach for Better Gamify:
 
 | Proposed sidebar category | Component families |
 | --- | --- |
-| Buttons & Actions | Reward Button; Action Credits **(already available)** |
-| Feedback & Celebration | XP & Level Meter; Milestone Celebration; Achievement Card; Personal Best Card |
+| Buttons & Actions | Reward Button **(available)**; Action Credits **(available)** |
+| Feedback & Celebration | XP & Level Meter **(available)**; Milestone Celebration **(available)**; Achievement Card; Personal Best Card |
 | Progression & Habits | Streak Calendar; Unlockable Path |
 | Challenges & Community | Leaderboard; Challenge Hub |
 | Rewards & Economy | Reward Store |
@@ -40,14 +41,16 @@ a team leaderboard are three examples of one component family.
 
 ### 1. Reward Button
 
-**Category:** Buttons & Actions · **Size:** Simple
+**Category:** Buttons & Actions · **Size:** Simple · **Status:** Available
 
 A satisfying completion or claim control that communicates ready, working,
-earned, and retry states. The reward appears after the application confirms
-success. It can also be used without points, with a clear completion check.
+earned, and retry states. Earned feedback appears after the application confirms
+success. The potential reward can be shown up front. It also works without
+points, with a clear completion check.
 
 - **Examples:** finish a lesson; complete a focus session; claim an eligible reward.
-- **Variants:** raised press button, compact claim button, progress-to-check button.
+- **Variants:** raised press button, compact claim button, outline button. Each
+  supports pending, earned, retry, and unavailable states.
 - **GodUI inspiration:** the tactile depth of [Magic Button](https://godui.design/docs/lab/buttons/magic-button)
   and the visible pending state of [Progress Fold Button](https://godui.design/docs/lab/buttons/progress-fold-button).
 - **Implementation skill:** find the qualifying event and success response;
@@ -56,7 +59,7 @@ success. It can also be used without points, with a clear completion check.
 
 ### 2. XP & Level Meter
 
-**Category:** Feedback & Celebration · **Size:** Simple
+**Category:** Feedback & Celebration · **Size:** Simple · **Status:** Available
 
 A compact display of earned experience, the current level, and distance to
 the next meaningful milestone. Include a plain-language explanation of what
@@ -73,7 +76,7 @@ the next level changes, if anything.
 
 ### 3. Milestone Celebration
 
-**Category:** Feedback & Celebration · **Size:** Simple
+**Category:** Feedback & Celebration · **Size:** Simple · **Status:** Available
 
 Feedback whose intensity matches the accomplishment: a tiny inline spark for
 a small win, a toast for a milestone, or a reveal dialog for a major unlock.

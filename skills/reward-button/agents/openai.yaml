@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reward Button"
+  short_description: "Build satisfying, truthful completion controls"
+  default_prompt: "Use $reward-button to implement a satisfying completion or claim control in this app, connected to its real action and reward services."

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XP & Level Meter — Component &amp; implementation skill | Better Gamify</title>
+  <meta name="description" content="A dependency-free XP and level meter with bar, compact, and ring layouts, threshold progress, and a matching implementation skill." />
+  <link rel="canonical" href="https://example.invalid/better-gamify/patterns/xp-meter/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Better Gamify" />
+  <meta property="og:url" content="https://example.invalid/better-gamify/patterns/xp-meter/" />
+  <meta property="og:title" content="XP & Level Meter — Better Gamify" />
+  <meta property="og:description" content="A dependency-free XP and level meter with bar, compact, and ring layouts, threshold progress, and a matching implementation skill." />
+  <meta property="og:image" content="https://example.invalid/better-gamify/social.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../../primitives.css" />
+  <script type="module" src="../../primitives.js"></script>
+</head>
+<body data-pattern="xp-meter">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="../../"><img src="../../favicon.svg" width="28" height="28" alt="" />Better Gamify<span class="version">v0.2</span></a>
+    <nav aria-label="Main navigation"><a href="../../">All components</a><a href="#implementation-skill">Implementation skill</a></nav>
+    <div class="nav-actions"><a class="github-nav" href="https://github.com/jIrwinCline/better-gamify">GitHub ↗</a></div>
+  </header>
+  <main id="main" class="guide primitive-guide">
+    <nav class="primitive-nav" aria-label="Components">
+      <a href="../action-credits/">Action Credits</a>
+      <a href="../reward-button/">Reward Button</a>
+      <a href="../xp-meter/" aria-current="page">XP & Level Meter</a>
+      <a href="../milestone-celebration/">Milestone Celebration</a>
+    </nav>
+    <div class="primitive-intro">
+      <div class="eyebrow">003 / FEEDBACK & CELEBRATION</div>
+      <h1>XP &amp; Level Meter</h1>
+      <p class="guide-lead">Show how far someone has come, where they are now, and the next level within reach.</p>
+    </div>
+    <div class="primitive-links">
+      <a class="button primary" href="../../components/xp-meter/xp-meter.js" download>Download component ↓</a>
+      <a class="button outline" href="../../downloads/xp-meter.zip" download>Download skill ↓</a>
+    </div>
+    <section class="primitive-workbench" aria-label="XP & Level Meter interactive demo">
+      <div class="primitive-toolbar">
+        <div class="primitive-variants" role="group" aria-label="Choose a variant">
+          <button type="button" data-primitive-variant="bar" aria-pressed="true">Progress bar</button>
+          <button type="button" data-primitive-variant="compact" aria-pressed="false">Compact</button>
+          <button type="button" data-primitive-variant="ring" aria-pressed="false">Ring</button>
+        </div>
+        <button type="button" class="primitive-theme" id="primitive-theme" aria-label="Switch preview to light theme">Dark preview</button>
+      </div>
+      <div class="primitive-stage" id="primitive-stage" data-demo-theme="dark">
+        <xp-meter id="primitive-demo" variant="bar" theme="dark"></xp-meter>
+      </div>
+      <div class="primitive-controls">
+        <button class="button primary" id="xp-add" type="button">+75 demo XP</button>
+<button class="button outline" id="xp-subtract" type="button">−50 demo XP</button>
+<button class="button outline" id="xp-max" type="button">Reach highest level</button>
+        <button class="button outline primitive-reset" id="primitive-reset" type="button">Reset demo ↺</button>
+      </div>
+      <p class="primitive-feedback" id="demo-feedback" role="status" aria-live="polite">Starting at 180 demo XP · Explorer.</p>
+      <p class="primitive-notice">Sandbox simulation. XP and level thresholds are examples, not a recommended scoring system. No score is stored.</p>
+    </section>
+    <noscript><p class="note">Enable JavaScript to try the interactive demonstration. The integration guide and downloads remain available below.</p></noscript>
+    <div class="primitive-facts">
+      <section><h2>Three useful shapes</h2><p>A full progress bar, a compact summary, or a ring for a dashboard or profile.</p></section>
+      <section><h2>Clear level thresholds</h2><p>Current level and the next threshold are derived from the progress your app supplies.</p></section>
+      <section><h2>Progress beyond points</h2><p>For learning, practice, contributions, or any meaningful progression your product already measures.</p></section>
+    </div>
+    <div class="primitive-docs">
+      <h2>A little context for every step.</h2>
+<p>Give the meter a total and an ordered set of level thresholds. It shows the current level and progress toward the next one. At the highest configured level, the experience has a clear finish instead of an impossible next target.</p>
+<p>Try adding points to cross a level, subtracting them to preview a correction, and jumping to the highest level. These controls change only the demonstration.</p>
+<h2>Connect it to your application</h2>
+<p>Import the module and add <code>&lt;xp-meter&gt;</code> to your page. Supply a <code>progress</code> object with <code>value</code> and <code>levels</code>. Each level has a numeric <code>threshold</code> and a readable <code>label</code>.</p>
+      <div class="primitive-code">
+        <div class="code-heading"><span>APPLICATION INTEGRATION</span><button type="button" class="copy-button" data-copy-target="primitive-code">Copy code</button></div>
+        <pre tabindex="0" aria-label="Integration example"><code id="primitive-code">import './xp-meter.js';
+
+const meter = document.querySelector('xp-meter');
+meter.setAttribute('variant', 'bar');
+
+// Example data shape. Load production values from your app.
+meter.progress = {
+  value: 180,
+  levels: [
+    { threshold: 0, label: 'Beginner' },
+    { threshold: 100, label: 'Explorer' },
+    { threshold: 250, label: 'Builder' },
+    { threshold: 500, label: 'Expert' },
+  ],
+};
+
+// After a confirmed activity, replace the complete snapshot.
+async function refreshProgress() {
+  meter.progress = await loadMyProgress();
+}</code></pre>
+      </div>
+      <p><code>loadMyProgress()</code> is your authenticated application adapter. Supply the existing scoring rules and latest total; the meter does not earn XP, save a balance, or unlock entitlements.</p>
+<p>Use cumulative thresholds such as 0, 100, 250, and 500—not the amount required within each level. Choose <code>bar</code>, <code>compact</code>, or <code>ring</code>, then adapt the shared CSS variables to your app.</p>
+      <p><a href="https://github.com/jIrwinCline/better-gamify/blob/main/docs/xp-meter.md">Read the integration guide ↗</a> · <a href="https://github.com/jIrwinCline/better-gamify/tree/main/components/xp-meter">Component source &amp; API ↗</a></p>
+      <h2 id="implementation-skill">A component. And a way to make it yours.</h2>
+      <p>The skill finds the product's actual progress model, chooses a fitting layout, and connects meaningful level thresholds. It handles updates and boundary states without creating a competing score ledger.</p>
+      <p>Download and extract the skill ZIP. Copy its entire <code>xp-meter</code> folder into <code>~/.codex/skills/</code>, then open your app's project in a new chat and use this prompt:</p>
+      <p class="primitive-skill-prompt" id="primitive-skill-prompt">$xp-meter Add an XP and level meter to this app using its existing progress model. Inspect the product and design system, define clear level labels and thresholds where missing, and render authoritative progress with sensible empty, correction, and highest-level states.</p>
+      <div class="primitive-skill-actions">
+        <button class="button outline" type="button" data-copy-target="primitive-skill-prompt">Copy skill prompt</button>
+        <a class="button primary" href="../../downloads/xp-meter.zip" download>Download skill ↓</a>
+      </div>
+      <p class="primitive-finish">Reward meaningful progress. A higher number should correspond to something a person actually values.</p>
+    </div>
+    <footer><a href="../../" class="footer-brand">Better Gamify</a><a href="../../LICENSE.txt">MIT licensed</a><a href="https://github.com/jIrwinCline/better-gamify/issues">Suggest a pattern ↗</a></footer>
+  </main>
+</body>
+</html>

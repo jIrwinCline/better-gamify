@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reward Button — Component &amp; implementation skill | Better Gamify</title>
+  <meta name="description" content="A tactile reward button with ready, pending, earned, error, and unavailable states. Three variants and an implementation skill for your existing app." />
+  <link rel="canonical" href="https://example.invalid/better-gamify/patterns/reward-button/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Better Gamify" />
+  <meta property="og:url" content="https://example.invalid/better-gamify/patterns/reward-button/" />
+  <meta property="og:title" content="Reward Button — Better Gamify" />
+  <meta property="og:description" content="A tactile reward button with ready, pending, earned, error, and unavailable states. Three variants and an implementation skill for your existing app." />
+  <meta property="og:image" content="https://example.invalid/better-gamify/social.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../../primitives.css" />
+  <script type="module" src="../../primitives.js"></script>
+</head>
+<body data-pattern="reward-button">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="../../"><img src="../../favicon.svg" width="28" height="28" alt="" />Better Gamify<span class="version">v0.2</span></a>
+    <nav aria-label="Main navigation"><a href="../../">All components</a><a href="#implementation-skill">Implementation skill</a></nav>
+    <div class="nav-actions"><a class="github-nav" href="https://github.com/jIrwinCline/better-gamify">GitHub ↗</a></div>
+  </header>
+  <main id="main" class="guide primitive-guide">
+    <nav class="primitive-nav" aria-label="Components">
+      <a href="../action-credits/">Action Credits</a>
+      <a href="../reward-button/" aria-current="page">Reward Button</a>
+      <a href="../xp-meter/">XP & Level Meter</a>
+      <a href="../milestone-celebration/">Milestone Celebration</a>
+    </nav>
+    <div class="primitive-intro">
+      <div class="eyebrow">002 / BUTTONS & ACTIONS</div>
+      <h1>Reward Button</h1>
+      <p class="guide-lead">Give a meaningful action a clear beginning, an honest waiting state, and a small moment of reward.</p>
+    </div>
+    <div class="primitive-links">
+      <a class="button primary" href="../../components/reward-button/reward-button.js" download>Download component ↓</a>
+      <a class="button outline" href="../../downloads/reward-button.zip" download>Download skill ↓</a>
+    </div>
+    <section class="primitive-workbench" aria-label="Reward Button interactive demo">
+      <div class="primitive-toolbar">
+        <div class="primitive-variants" role="group" aria-label="Choose a variant">
+          <button type="button" data-primitive-variant="raised" aria-pressed="true">Raised</button>
+          <button type="button" data-primitive-variant="compact" aria-pressed="false">Compact</button>
+          <button type="button" data-primitive-variant="outline" aria-pressed="false">Outline</button>
+        </div>
+        <button type="button" class="primitive-theme" id="primitive-theme" aria-label="Switch preview to light theme">Dark preview</button>
+      </div>
+      <div class="primitive-stage" id="primitive-stage" data-demo-theme="dark">
+        <reward-button id="primitive-demo" variant="raised" theme="dark" label="Finish this lesson" reward-label="+25 demo XP" status="ready"></reward-button>
+      </div>
+      <div class="primitive-controls">
+        <label class="control-label" for="reward-state">Preview state
+<select id="reward-state"><option value="ready">Ready</option><option value="pending">Pending</option><option value="earned">Earned</option><option value="error">Error / retry</option><option value="unavailable">Unavailable</option></select></label>
+<button class="button outline" id="reward-failure" type="button" aria-pressed="false">Next attempt: succeed</button>
+        <button class="button outline primitive-reset" id="primitive-reset" type="button">Reset demo ↺</button>
+      </div>
+      <p class="primitive-feedback" id="demo-feedback" role="status" aria-live="polite">Try the button, or switch the next attempt to fail and explore its retry state.</p>
+      <p class="primitive-notice">Sandbox simulation. The delay and reward are illustrative; clicking this demo never issues product credits.</p>
+    </section>
+    <noscript><p class="note">Enable JavaScript to try the interactive demonstration. The integration guide and downloads remain available below.</p></noscript>
+    <div class="primitive-facts">
+      <section><h2>Three ways to fit</h2><p>Raised for a primary action, compact beside content, or outline for a quieter reward.</p></section>
+      <section><h2>Five honest states</h2><p>Ready, pending, earned, error, and unavailable keep the outcome clear.</p></section>
+      <section><h2>A useful finishing touch</h2><p>For a completed lesson, a submitted task, or a reward already earned in your app.</p></section>
+    </div>
+    <div class="primitive-docs">
+      <h2>Make the result feel good.</h2>
+<p>The button sends a request when selected. Your application starts the action or checks completion, then supplies the result. The raised version adds a little game-like press depth; the compact and outline versions fit more restrained surfaces.</p>
+<p>Use an earned state only after the application confirms the result. If a request fails, keep the retry clear. If the action is unavailable, explain why in the surrounding interface.</p>
+<h2>Connect it to your application</h2>
+<p>Download the module, import it once, and add <code>&lt;reward-button&gt;</code> to your page. The <code>reward-request</code> event asks the host to act; it does not grant a reward or change the state automatically.</p>
+      <div class="primitive-code">
+        <div class="code-heading"><span>APPLICATION INTEGRATION</span><button type="button" class="copy-button" data-copy-target="primitive-code">Copy code</button></div>
+        <pre tabindex="0" aria-label="Integration example"><code id="primitive-code">import './reward-button.js';
+
+const button = document.querySelector('reward-button');
+button.setAttribute('label', 'Claim lesson reward');
+button.setAttribute('reward-label', '+25 XP');
+
+button.addEventListener('reward-request', async () =&gt; {
+  if (!['ready', 'error'].includes(button.status)) return;
+  button.status = 'pending';
+  try {
+    // Your authenticated app verifies completion and grants once.
+    const result = await requestExistingReward();
+    button.status = result.status; // Authoritative component state.
+  } catch {
+    button.status = 'error';
+  }
+});</code></pre>
+      </div>
+      <p><code>requestExistingReward()</code> is your application adapter. It must resolve eligibility, reward amount, and duplicate requests through your existing service. The component displays the <code>reward-label</code>; that label never determines an actual award.</p>
+<p>Set <code>variant</code> to <code>raised</code>, <code>compact</code>, or <code>outline</code>. Set <code>status</code> through its property or attribute. The font inherits from your page, and shared CSS variables let you match the rest of the app.</p>
+      <p><a href="https://github.com/jIrwinCline/better-gamify/blob/main/docs/reward-button.md">Read the integration guide ↗</a> · <a href="https://github.com/jIrwinCline/better-gamify/tree/main/components/reward-button">Component source &amp; API ↗</a></p>
+      <h2 id="implementation-skill">A component. And a way to make it yours.</h2>
+      <p>The skill helps identify the right completion moment, reuse your design system, and connect the button to existing application logic. It treats the displayed reward as presentation and leaves eligibility and accounting with your trusted service.</p>
+      <p>Download and extract the skill ZIP. Copy its entire <code>reward-button</code> folder into <code>~/.codex/skills/</code>, then open your app's project in a new chat and use this prompt:</p>
+      <p class="primitive-skill-prompt" id="primitive-skill-prompt">$reward-button Add a reward button to the meaningful completion moment in this app. Inspect the current design and reward flow, choose a suitable variant, and connect honest pending, success, retry, and unavailable states to the existing application.</p>
+      <div class="primitive-skill-actions">
+        <button class="button outline" type="button" data-copy-target="primitive-skill-prompt">Copy skill prompt</button>
+        <a class="button primary" href="../../downloads/reward-button.zip" download>Download skill ↓</a>
+      </div>
+      <p class="primitive-finish">Try this button after a useful action—not as another obstacle before someone can use the product.</p>
+    </div>
+    <footer><a href="../../" class="footer-brand">Better Gamify</a><a href="../../LICENSE.txt">MIT licensed</a><a href="https://github.com/jIrwinCline/better-gamify/issues">Suggest a pattern ↗</a></footer>
+  </main>
+</body>
+</html>

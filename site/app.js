@@ -1,4 +1,5 @@
 import "./components/action-credits/action-credits.js";
+import "./catalog.js";
 
 const $ = (id) => document.getElementById(id);
 const demo = $("main-demo");
@@ -155,6 +156,7 @@ $("demo-theme").addEventListener("click", () => {
 });
 function setPageTheme(theme) {
   document.documentElement.dataset.theme = theme;
+  document.querySelectorAll('reward-button, xp-meter, milestone-celebration').forEach(component => component.setAttribute('theme', theme));
   $("theme-toggle").setAttribute(
     "aria-label",
     `Switch to ${theme === "dark" ? "light" : "dark"} theme`,

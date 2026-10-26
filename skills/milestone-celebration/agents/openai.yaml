@@ -1,0 +1,4 @@
+interface:
+  display_name: "Milestone Celebration"
+  short_description: "Celebrate confirmed milestones without replay spam"
+  default_prompt: "Use $milestone-celebration to add restrained, accessible feedback for meaningful accomplishments in this app."

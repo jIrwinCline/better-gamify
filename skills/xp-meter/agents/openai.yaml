@@ -1,0 +1,4 @@
+interface:
+  display_name: "XP & Level Meter"
+  short_description: "Show real experience, levels, and goal progress"
+  default_prompt: "Use $xp-meter to integrate an experience or level display using this app’s progression rules and visual style."

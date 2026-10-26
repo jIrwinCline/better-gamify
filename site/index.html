@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Better Gamify — Open-source gamification components for SaaS</title>
+    <title>Better Gamify — Open-source gamification components & skills</title>
     <meta
       name="description"
-      content="Explore live SaaS gamification examples and own the code. Action Credits pairs an adaptable onboarding rewards component with an AI implementation skill. Free and MIT licensed."
+      content="Explore reward buttons, XP meters, milestone celebrations, and onboarding rewards. Open-source gamification components with implementation skills for your app."
     />
     <meta name="theme-color" content="#111310" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
@@ -19,7 +19,7 @@
     />
     <meta
       property="og:description"
-      content="Open-source gamification components and implementation skills for SaaS. Explore the first pattern: Action Credits."
+      content="Four open-source gamification components. Interactive examples, adaptable code, and implementation skills for your app."
     />
     <meta property="og:url" content="https://example.invalid/better-gamify/" />
     <meta
@@ -43,7 +43,7 @@
       <a class="brand" href="#top" aria-label="Better Gamify home"
         ><img src="./favicon.svg" width="28" height="28" alt="" /><span
           >Better Gamify</span
-        ><span class="version">v0.1</span></a
+        ><span class="version">v0.2</span></a
       >
       <nav aria-label="Main navigation">
         <a class="nav-active" href="#patterns">Patterns</a
@@ -82,16 +82,18 @@
           <span class="sidebar-label">THE LIBRARY</span
           ><a href="#patterns" class="sidebar-link active"
             ><span class="four-dots" aria-hidden="true">⊞</span> All patterns
-            <span class="count">01</span></a
+            <span class="count">04</span></a
           ><a href="#installation" class="sidebar-link"
             ><span aria-hidden="true">↳</span> Installation</a
           >
         </div>
         <div class="sidebar-group">
-          <span class="sidebar-label">PATTERNS</span
-          ><a href="#action-credits" class="sidebar-link"
-            ><span class="tiny-dot"></span> Action Credits
+          <span class="sidebar-label">BUTTONS & ACTIONS</span
+          ><a href="./patterns/reward-button/" class="sidebar-link"
+            ><span class="tiny-dot"></span> Reward Button
             <span class="new-badge">NEW</span></a
+          ><a href="#action-credits" class="sidebar-link"
+            ><span class="tiny-dot"></span> Action Credits</a
           >
           <div class="sidebar-sub">
             <a href="#action-credits" data-select-variant="grid">Reward cards</a
@@ -101,6 +103,11 @@
               >Compact panel</a
             >
           </div>
+        </div>
+        <div class="sidebar-group">
+          <span class="sidebar-label">FEEDBACK & CELEBRATION</span>
+          <a href="./patterns/xp-meter/" class="sidebar-link"><span aria-hidden="true">▰</span> XP & Level Meter <span class="new-badge">NEW</span></a>
+          <a href="./patterns/milestone-celebration/" class="sidebar-link"><span aria-hidden="true">✦</span> Milestone Celebration <span class="new-badge">NEW</span></a>
         </div>
         <div class="sidebar-group">
           <span class="sidebar-label">BUILD WITH IT</span
@@ -140,11 +147,11 @@
               Thoughtful UI patterns, paired with skills that<br
                 class="desktop-break"
               />
-              help your agent build them into your SaaS.
+              help your agent build them into your app.
             </p>
             <div class="hero-actions">
-              <a class="button primary" href="#action-credits"
-                >Explore the first pattern <span aria-hidden="true">↗</span></a
+              <a class="button primary" href="#patterns"
+                >Explore the components <span aria-hidden="true">↗</span></a
               ><a
                 class="text-link"
                 data-repo
@@ -201,10 +208,58 @@
           </div>
         </section>
         <div class="library-meta" id="patterns">
-          <span><b>01</b> pattern</span><span><b>03</b> live examples</span
+          <span><b>04</b> components</span><span><b>12</b> variants</span
           ><span><b>MIT</b> licensed</span
           ><span class="meta-end">Small by design. Yours to adapt.</span>
         </div>
+        <section class="catalog-section" aria-labelledby="catalog-title">
+          <div class="section-heading">
+            <div><div class="eyebrow muted">PICK YOUR NEXT SMALL WIN</div><h2 id="catalog-title">A little progress. A lot of possibility.</h2><p>Try a component. Find its variants. Make it feel like your app.</p></div>
+          </div>
+          <div class="catalog-toolbar">
+            <div class="catalog-filters" role="group" aria-label="Filter components by category">
+              <button data-category="all" aria-pressed="true">All components <span>4</span></button>
+              <button data-category="actions" aria-pressed="false">Buttons & Actions</button>
+              <button data-category="feedback" aria-pressed="false">Feedback & Celebration</button>
+            </div>
+            <span class="catalog-count" id="catalog-count" role="status">4 components</span>
+          </div>
+          <div class="catalog-grid">
+            <article class="catalog-card" data-component-category="actions">
+              <div class="catalog-preview reward-preview">
+                <span class="preview-kicker">ONE MORE SMALL WIN</span>
+                <reward-button id="catalog-reward" label="Complete a lesson" reward-label="+25 demo XP" theme="dark"></reward-button>
+                <div class="catalog-demo-controls"><span>Simulated completion</span><button id="catalog-reward-reset" aria-label="Reset Reward Button demo">Reset ↺</button></div>
+              </div>
+              <div class="catalog-card-copy"><div class="catalog-card-meta"><span>BUTTONS & ACTIONS</span><span class="size-tag">Simple</span></div><h3><a href="./patterns/reward-button/">Reward Button <span aria-hidden="true">↗</span></a></h3><p>A satisfying press, a clear working state, and a small celebration of done.</p><div class="catalog-card-footer"><span>3 variants · Component + skill</span><a href="./patterns/reward-button/">Explore <span class="sr-only">Reward Button</span>↗</a></div></div>
+            </article>
+            <article class="catalog-card" data-component-category="feedback">
+              <div class="catalog-preview xp-preview">
+                <span class="preview-kicker">YOUR NEXT LEVEL IS CLOSER</span>
+                <xp-meter id="catalog-xp" theme="dark"></xp-meter>
+                <div class="catalog-demo-controls"><button id="catalog-xp-add">Try +25 demo XP</button><button id="catalog-xp-reset" aria-label="Reset XP Meter demo">Reset ↺</button></div>
+              </div>
+              <div class="catalog-card-copy"><div class="catalog-card-meta"><span>FEEDBACK & CELEBRATION</span><span class="size-tag">Simple</span></div><h3><a href="./patterns/xp-meter/">XP & Level Meter <span aria-hidden="true">↗</span></a></h3><p>Make progress tangible, from a quiet counter to a complete level-up moment.</p><div class="catalog-card-footer"><span>3 variants · Component + skill</span><a href="./patterns/xp-meter/">Explore <span class="sr-only">XP & Level Meter</span>↗</a></div></div>
+            </article>
+            <article class="catalog-card" data-component-category="feedback">
+              <div class="catalog-preview celebration-preview">
+                <div class="celebration-placeholder" id="catalog-celebration-placeholder" aria-hidden="true"><span class="pixel-medal">✦</span><span class="preview-kicker">MAKE THE MOMENT COUNT</span></div>
+                <milestone-celebration id="catalog-celebration" theme="dark" variant="inline"></milestone-celebration>
+                <div class="catalog-demo-controls"><button id="catalog-celebrate">Try a celebration ✦</button><button id="catalog-celebration-reset" aria-label="Reset Milestone Celebration demo">Reset ↺</button></div>
+              </div>
+              <div class="catalog-card-copy"><div class="catalog-card-meta"><span>FEEDBACK & CELEBRATION</span><span class="size-tag">Simple</span></div><h3><a href="./patterns/milestone-celebration/">Milestone Celebration <span aria-hidden="true">↗</span></a></h3><p>A little recognition for the moments that deserve it. Big or small.</p><div class="catalog-card-footer"><span>3 variants · Component + skill</span><a href="./patterns/milestone-celebration/">Explore <span class="sr-only">Milestone Celebration</span>↗</a></div></div>
+            </article>
+            <article class="catalog-card" data-component-category="actions">
+              <div class="catalog-preview onboarding-preview">
+                <span class="preview-kicker">A LITTLE ROOM TO GET STARTED</span>
+                <div class="mini-actions" aria-label="Illustrative onboarding rewards"><div><span class="mini-check">✓</span><span>Verify your email</span><b>+25</b></div><div><span class="mini-check">◇</span><span>Create your first project</span><b>+50</b></div><div><span class="mini-check">↗</span><span>Bring a teammate</span><b>+75</b></div></div>
+                <div class="catalog-demo-controls"><span>Illustrative demo credits</span><a href="#action-credits">Try the flow ↓</a></div>
+              </div>
+              <div class="catalog-card-copy"><div class="catalog-card-meta"><span>BUTTONS & ACTIONS</span><span class="size-tag">Full flow</span></div><h3><a href="./patterns/action-credits/">Action Credits <span aria-hidden="true">↗</span></a></h3><p>Optional onboarding actions that help people find value and earn useful rewards.</p><div class="catalog-card-footer"><span>3 variants · Component + skill</span><a href="./patterns/action-credits/">Explore <span class="sr-only">Action Credits</span>↗</a></div></div>
+            </article>
+          </div>
+          <p class="catalog-note">A playground for possibilities. All rewards and XP here are simulated.</p>
+        </section>
         <section
           id="action-credits"
           class="pattern-section"
@@ -213,7 +268,7 @@
           <div class="section-heading">
             <div>
               <div class="eyebrow muted">
-                PATTERN 001 <span class="separator">/</span> ACTIVATION & GROWTH
+                FEATURED FLOW <span class="separator">/</span> BUTTONS & ACTIONS
               </div>
               <h2 id="pattern-title">
                 Action Credits<span class="available-tag">Available</span>

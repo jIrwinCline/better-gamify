@@ -1,6 +1,6 @@
 # Better Gamify
 
-**Gamification components for SaaS, with the skills to make them work in your app.**
+**Gamification components for apps, with the skills to make them work.**
 
 [Explore the live gallery](https://jirwincline.github.io/better-gamify/) ·
 [Action Credits guide](https://jirwincline.github.io/better-gamify/patterns/action-credits/) ·
@@ -11,13 +11,22 @@ skill to adapt the pattern to your product's design, data, and business rules.
 The goal is useful product behavior: help people reach value, recognize progress,
 and earn rewards they can actually use.
 
-The library starts with **one pattern: Action Credits**, an optional onboarding
-checklist where users complete useful actions to earn product credits. Its live
-examples show three layouts: grid, list, and compact. More patterns can follow
-the same component + example + skill structure.
+The library includes **four components**, each with three interactive variants
+and a companion implementation skill:
 
-See the [proposed component roadmap](ROADMAP.md) for ten possible additions,
-their categories, example uses, and recommended build sequence.
+| Category | Component | Variants | Implementation skill |
+| --- | --- | --- | --- |
+| Buttons & Actions | [Reward Button](https://jirwincline.github.io/better-gamify/patterns/reward-button/) | Raised, compact, outline | [reward-button](skills/reward-button/SKILL.md) |
+| Buttons & Actions | [Action Credits](https://jirwincline.github.io/better-gamify/patterns/action-credits/) | Cards, checklist, compact | [action-credits](skills/action-credits/SKILL.md) |
+| Feedback & Celebration | [XP & Level Meter](https://jirwincline.github.io/better-gamify/patterns/xp-meter/) | Bar, compact, ring | [xp-meter](skills/xp-meter/SKILL.md) |
+| Feedback & Celebration | [Milestone Celebration](https://jirwincline.github.io/better-gamify/patterns/milestone-celebration/) | Inline, toast, dialog | [milestone-celebration](skills/milestone-celebration/SKILL.md) |
+
+Use them in learning, productivity, fitness, community, creative, and SaaS apps.
+Components render supplied state; the host application owns actual rewards,
+experience, and milestone evidence.
+
+See the [component roadmap](ROADMAP.md) for the first three additions and seven
+further proposals, their categories, example uses, and recommended build sequence.
 
 ## Try the examples
 
@@ -38,6 +47,13 @@ npm run build # Generate the static site in dist/
 ```
 
 ## Use the implementation skill
+
+Every component page has a downloadable skill ZIP. Extract it and copy the
+complete named folder to `~/.codex/skills/`, preserving any existing installation
+until you compare it. The three new skills can be invoked as `$reward-button`,
+`$xp-meter`, and `$milestone-celebration` in your application's project.
+They inspect your app and adapt to its framework, design, and existing services.
+The Action Credits example below illustrates the same installation approach.
 
 The [Action Credits skill](skills/action-credits/SKILL.md) guides an agent through
 product discovery, action selection, reward economics, visual integration,
@@ -121,6 +137,8 @@ See the [integration guide](docs/action-credits.md),
 | --- | --- |
 | `components/action-credits/` | Reusable component and public API |
 | `skills/action-credits/` | Implementation skill, references, and planning template |
+| `components/{reward-button,xp-meter,milestone-celebration}/` | Standalone components and public APIs |
+| `skills/{reward-button,xp-meter,milestone-celebration}/` | Companion implementation skills |
 | `site/` | Interactive showcase and simulated examples |
 | `docs/` | Application integration guidance |
 | `scripts/` | Local development and static build tooling |
@@ -141,6 +159,7 @@ In a fork, enable Pages with GitHub Actions and update `site/project.json` with
 your repository and site URLs before publishing. The gallery has no backend or
 paid hosting dependency.
 
-The skill download in `site/downloads/action-credits.zip` mirrors
-`skills/action-credits/`. When changing the skill, regenerate that archive with
-the entire `action-credits` directory at its root.
+The build generates every skill ZIP directly from `skills/` into
+`dist/downloads/`, with the complete named skill folder at its root. Updating
+the skill source and rebuilding keeps downloads in sync; no manual ZIP step or
+archiving dependency is required.

@@ -1,0 +1,316 @@
+/* Shared showcase styles for the three small gamification primitives. */
+.primitive-guide {
+  max-width: 1100px;
+  padding-top: 40px;
+}
+.primitive-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 38px;
+}
+.primitive-guide .primitive-nav a {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 11px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 11px;
+}
+.primitive-guide .primitive-nav a[aria-current="page"] {
+  background: var(--raised);
+  color: var(--accent);
+}
+.primitive-guide .eyebrow {
+  font: 8px/1.8 var(--pixel);
+  letter-spacing: 0;
+}
+.primitive-intro {
+  max-width: 730px;
+}
+.primitive-intro h1 {
+  margin-top: 16px;
+  font-size: clamp(35px, 5vw, 54px);
+}
+.primitive-guide .guide-lead {
+  font-size: 17px;
+  line-height: 1.75;
+}
+.primitive-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 32px;
+}
+.primitive-workbench {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  overflow: clip;
+  margin: 28px 0 36px;
+}
+.primitive-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.primitive-variants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.primitive-variants button,
+.primitive-theme {
+  padding: 9px 12px;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 12px;
+  color: var(--muted);
+  border: 1px solid transparent;
+}
+.primitive-variants button[aria-pressed="true"] {
+  color: var(--text);
+  background: var(--raised);
+  border-color: var(--border);
+}
+.primitive-theme {
+  border-color: var(--border);
+}
+.primitive-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 20px;
+  min-height: 290px;
+  padding: 48px 36px;
+  background:
+    radial-gradient(ellipse at center, #c5f58a07, transparent 70%),
+    #111510;
+  color: #edf4e4;
+}
+.primitive-stage[data-demo-theme="light"] {
+  background: #f6f8f1;
+  color: #25321b;
+}
+.primitive-stage xp-meter {
+  width: 100%;
+  max-width: 600px;
+}
+.primitive-stage milestone-celebration {
+  width: 100%;
+  max-width: 560px;
+}
+.primitive-stage milestone-celebration[variant="toast"],
+.primitive-stage milestone-celebration[variant="dialog"] {
+  width: auto;
+}
+.primitive-empty {
+  text-align: center;
+}
+.primitive-empty > span {
+  color: #c5f58a;
+  font: 28px/1.8 var(--pixel);
+}
+.primitive-stage[data-demo-theme="light"] .primitive-empty > span {
+  color: #456b27;
+}
+.primitive-guide .primitive-empty p {
+  color: inherit;
+  font-size: 14px;
+  margin: 12px 0 4px;
+}
+.primitive-empty small {
+  opacity: 0.65;
+  font-size: 11px;
+}
+.primitive-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 20px;
+  border-top: 1px solid var(--border);
+}
+.primitive-controls .control-label {
+  color: var(--muted);
+  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.primitive-controls select {
+  color: var(--text);
+  background: var(--raised);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  max-width: 100%;
+}
+.primitive-controls select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.primitive-controls .button {
+  min-height: 36px;
+  font-size: 11px;
+  padding: 8px 12px;
+}
+.primitive-controls .button[aria-pressed="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.primitive-controls .button:disabled {
+  opacity: 0.45;
+}
+.primitive-reset {
+  margin-left: auto;
+}
+.primitive-guide .primitive-feedback {
+  min-height: 51px;
+  margin: 0;
+  padding: 13px 20px;
+  font-size: 11px;
+  line-height: 1.8;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+.primitive-guide .primitive-notice {
+  margin: 0;
+  padding: 12px 20px;
+  background: var(--raised);
+  border-top: 1px solid var(--border);
+  font-size: 10px;
+  line-height: 1.8;
+}
+.primitive-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 32px 0 44px;
+}
+.primitive-guide .primitive-facts h2 {
+  font-size: 14px;
+  margin: 0 0 9px;
+}
+.primitive-guide .primitive-facts p {
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0;
+}
+.primitive-docs {
+  max-width: 790px;
+}
+.primitive-guide .primitive-docs h2 {
+  margin-top: 36px;
+}
+.primitive-guide .primitive-docs p,
+.primitive-guide .primitive-docs li {
+  font-size: 14px;
+}
+.primitive-code {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  overflow: hidden;
+  margin: 20px 0;
+}
+.primitive-code .code-heading {
+  padding: 13px 17px;
+  border-bottom: 1px solid var(--border);
+}
+.primitive-code pre {
+  margin: 0;
+  padding: 22px;
+  overflow: auto;
+  line-height: 1.9;
+  font-size: 11px;
+  tab-size: 2;
+}
+.primitive-code pre code {
+  padding: 0;
+  background: transparent;
+  font-size: inherit;
+  color: var(--muted);
+}
+.primitive-guide .primitive-skill-prompt {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.primitive-skill-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.primitive-guide .primitive-finish {
+  margin-top: 44px;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  font-size: 13px;
+}
+@media (max-width: 620px) {
+  .primitive-guide {
+    padding: 28px 18px;
+  }
+  .primitive-nav {
+    gap: 6px;
+    margin-bottom: 30px;
+  }
+  .primitive-guide .primitive-nav a {
+    font-size: 10px;
+    padding: 8px;
+  }
+  .primitive-guide .eyebrow {
+    font-size: 7px;
+  }
+  .primitive-intro h1 {
+    font-size: 36px;
+  }
+  .primitive-guide .guide-lead {
+    font-size: 15px;
+  }
+  .primitive-links .button {
+    font-size: 11px;
+  }
+  .primitive-toolbar {
+    padding: 12px;
+    gap: 10px;
+  }
+  .primitive-variants button,
+  .primitive-theme {
+    padding: 8px;
+    font-size: 11px;
+  }
+  .primitive-stage {
+    min-height: 265px;
+    padding: 30px 18px;
+  }
+  .primitive-controls {
+    padding: 14px 12px;
+    gap: 8px;
+  }
+  .primitive-reset {
+    margin-left: 0;
+  }
+  .primitive-guide .primitive-feedback,
+  .primitive-guide .primitive-notice {
+    padding: 12px;
+  }
+  .primitive-facts {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .primitive-code pre {
+    padding: 16px;
+    font-size: 10px;
+  }
+}
