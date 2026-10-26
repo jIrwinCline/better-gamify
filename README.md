@@ -16,6 +16,9 @@ checklist where users complete useful actions to earn product credits. Its live
 examples show three layouts: grid, list, and compact. More patterns can follow
 the same component + example + skill structure.
 
+See the [proposed component roadmap](ROADMAP.md) for ten possible additions,
+their categories, example uses, and recommended build sequence.
+
 ## Try the examples
 
 Download or clone this repository, then run the following from its root using a
